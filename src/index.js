@@ -7,7 +7,8 @@ const updateItem = require('./routes/updateItem');
 const deleteItem = require('./routes/deleteItem');
 
 app.use(require('body-parser').json());
-app.use(express.static(__dirname + '/static'));
+// app.use(express.static(__dirname + '/static'));
+app.use(express.static(path.join(__dirname, '/static')))
 
 app.get('/items', getItems);
 app.post('/items', addItem);
